@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meera | AI &amp; Data Science Portfolio</title>
+<meta name="description" content="Portfolio of Meera, B.Tech AI &amp; Data Science student, data analyst, web developer and content writer.">
+<meta name="theme-color" content="#0f3d3e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --ink:#142022; --muted:#55645f;
+  --line:#d9dfdb; --brand:#0f3d3e; --accent:#c2410c; --tint:#e4efec;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;font-size:1rem;-webkit-text-size-adjust:100%}
+a{color:var(--brand)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* Nav */
+.site-nav{position:sticky;top:0;z-index:20;background:rgba(246,247,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--head);font-weight:700;font-size:1.15rem;color:var(--brand);text-decoration:none}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:500;font-size:.92rem;padding:8px 10px;border-radius:8px}
+.links a:hover{background:var(--tint)}
+
+/* Hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);letter-spacing:-.02em;margin-bottom:14px}
+.tagline{font-size:1.15rem;color:var(--muted);max-width:34em;margin-bottom:26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:10px;border:2px solid var(--brand);background:var(--brand);color:#fff;transition:background .2s,color .2s}
+.btn:hover{background:#0a2b2c}
+.btn.ghost{background:transparent;color:var(--brand)}
+.btn.ghost:hover{background:var(--tint)}
+.avatar{width:190px;height:190px;border-radius:50%;border:4px solid var(--brand);background:var(--tint);overflow:hidden;display:grid;place-items:center;font-family:var(--head);font-size:3.4rem;font-weight:700;color:var(--brand)}
+.avatar>*{grid-area:1/1}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Sections */
+section{padding:48px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:1.8rem;margin-bottom:24px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+.about p{margin-bottom:14px;max-width:60ch}
+.facts{list-style:none;display:grid;gap:10px;align-content:start}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-weight:500}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.two h3,.block h3{font-size:1.1rem;margin-bottom:14px}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{background:var(--tint);color:var(--brand);padding:6px 14px;border-radius:999px;font-size:.9rem;font-weight:500}
+.goals{list-style:none}
+.goals li{padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative}
+.goals li::before{content:"";position:absolute;left:0;top:19px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* Projects: ruled rows */
+.project{display:grid;grid-template-columns:240px 1fr;gap:8px 32px;padding:22px 0;border-bottom:1px solid var(--line)}
+.project:first-of-type{padding-top:0}
+.project h3{font-size:1.2rem}
+.project p{max-width:62ch}
+.stack{grid-column:2;color:var(--muted);font-size:.88rem;font-weight:500}
+
+/* Experience */
+.roles{list-style:none;border-left:2px solid var(--brand);margin-left:6px}
+.roles li{position:relative;padding:0 0 22px 24px}
+.roles li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--brand)}
+.roles strong{display:block;font-family:var(--head);color:var(--brand);font-size:1.05rem}
+.roles span{color:var(--muted);font-size:.95rem}
+
+/* Certificates */
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cert .shot{height:170px;background:var(--tint);display:grid;place-items:center;color:var(--brand);font-family:var(--head);font-weight:700;text-align:center;padding:12px}
+.shot>*{grid-area:1/1}
+.cert img{width:100%;height:170px;object-fit:cover;display:block}
+.cert figcaption{padding:12px 14px;font-weight:600;font-size:.95rem}
+.note{margin-top:20px;color:var(--muted)}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:12px 18px;align-content:start}
+.contact dt{font-weight:600}
+.contact dd{overflow-wrap:anywhere}
+form{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+label{display:block;font-weight:600;margin-bottom:6px}
+input,textarea{width:100%;font:inherit;padding:11px 12px;margin-bottom:16px;border:1px solid #aab5b0;border-radius:8px;background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+button{width:100%;font:inherit;font-weight:600;padding:12px;border:0;border-radius:10px;background:var(--brand);color:#fff;cursor:pointer}
+button:hover{background:#0a2b2c}
+
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .avatar{order:-1;width:130px;height:130px;font-size:2.4rem}
+  .about,.two,.contact{grid-template-columns:1fr}
+  .project{grid-template-columns:1fr}
+  .stack{grid-column:1}
+  .brand{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Meera</a>
+    <nav class="links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills &amp; Goals</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Hi, I'm Meera</h1>
+      <p class="tagline">Aspiring AI engineer, data analyst, web developer and content writer.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/meeradharshinimd" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="avatar" aria-label="Meera">
+      <img src="meera.jpg" alt="Portrait of Meera" onerror="this.remove()">
+      <span aria-hidden="true">M</span>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm a B.Tech student specializing in <strong>Artificial Intelligence and Data Science</strong> at Pollachi Institute of Engineering and Technology, Tamil Nadu, India. I enjoy turning data into insights and ideas into clean, working websites.</p>
+        <p>I'm currently working on real-time projects across several internships, building freelance and portfolio work on the side, and learning machine learning through a masterclass. I'm also an Internshala Student Partner.</p>
+      </div>
+      <ul class="facts">
+        <li>Aspiring AI Engineer</li>
+        <li>Power BI Enthusiast</li>
+        <li>Front-end Developer</li>
+        <li>Machine Learning Learner</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills &amp; goals</h2>
+    <div class="two">
+      <div>
+        <h3>Skills</h3>
+        <ul class="chips">
+          <li>Python</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li>
+          <li>Scikit-learn</li><li>Power BI</li><li>HTML</li><li>CSS</li>
+          <li>Machine Learning</li><li>Data Analysis</li><li>Content Writing</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Goals</h3>
+        <ul class="goals">
+          <li>Become an AI Engineer</li>
+          <li>Get placed at Google or Zoho</li>
+          <li>Gain hands-on experience in AI</li>
+          <li>Grow as a top freelancer</li>
+          <li>Start trading before 25</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <article class="project">
+      <h3>Portfolix LMS</h3>
+      <p>Full-stack AI interview practice and evaluation system with AI-powered answer scoring.</p>
+      <p class="stack">Node.js, Express, MongoDB, JWT, Cloudinary, OpenAI / Gemini, Next.js 15 (frontend in progress)</p>
+    </article>
+    <article class="project">
+      <h3>InAmigos Foundation NGO website</h3>
+      <p>Designed and built a complete website for InAmigos Foundation as part of the Technology Hacks web development programme.</p>
+      <p class="stack">HTML, CSS, JavaScript</p>
+    </article>
+    <article class="project">
+      <h3>Project Udaan content</h3>
+      <p>Articles, headlines and branded content for a women's empowerment initiative, delivered as professionally designed PDFs and documents.</p>
+      <p class="stack">Python, ReportLab, Content Writing</p>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <ul class="roles">
+      <li><strong>Data Analyst Intern</strong><span>Thiranex</span></li>
+      <li><strong>Data Analyst Intern</strong><span>TechnoHacks EduTech Official</span></li>
+      <li><strong>Web Developer</strong><span>InAmigos Foundation, Technology Hacks</span></li>
+      <li><strong>Content Writer</strong><span>InAmigos Foundation (IAF)</span></li>
+      <li><strong>Junior HR Executive</strong><span>InAmigos Foundation</span></li>
+      <li><strong>AI/ML Intern</strong><span>Portfolio Builders</span></li>
+      <li><strong>AI/ML Intern</strong><span>CodeVedX</span></li>
+      <li><strong>Internshala Student Partner</strong><span>Internshala</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <h2>Certificates</h2>
+    <div class="certs">
+      <figure class="cert">
+        <div class="shot"><span>AI Master Class</span><img src="certificates/ai-master-class.jpg" alt="AI Master Class certificate" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>AI Master Class</figcaption>
+      </figure>
+      <figure class="cert">
+        <div class="shot"><span>ISP Webinar</span><img src="certificates/isp-webinar.jpg" alt="Internshala Student Partner webinar certificate" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>Internshala Student Partner Webinar</figcaption>
+      </figure>
+      <figure class="cert">
+        <div class="shot"><span>Data Analyst</span><img src="certificates/data-analyst.jpg" alt="Data Analyst certificate" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>Data Analyst</figcaption>
+      </figure>
+      <figure class="cert">
+        <div class="shot"><span>AI Tools</span><img src="certificates/ai-tools.jpg" alt="Artificial Intelligence certificate" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>Artificial Intelligence / AI Tools</figcaption>
+      </figure>
+      <figure class="cert">
+        <div class="shot"><span>Web Development</span><img src="certificates/scaler-web-dev.jpg" alt="Scaler web development certificate" loading="lazy" onerror="this.remove()"></div>
+        <figcaption>Web Development (Scaler)</figcaption>
+      </figure>
+    </div>
+    <p class="note">Also certified in Content Writing. See all credentials on my
+      <a href="https://www.linkedin.com/in/meeradharshinimd" target="_blank" rel="noopener">LinkedIn profile</a>.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact">
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:meeradharshini26@gmail.com">meeradharshini26@gmail.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+919344698029">+91 93446 98029</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/meeradharshinimd" target="_blank" rel="noopener">meeradharshinimd</a></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/boss_queen__14" target="_blank" rel="noopener">@boss_queen__14</a></dd>
+        <dt>Location</dt><dd>Tamil Nadu, India</dd>
+      </dl>
+      <form action="https://formspree.io/f/meeygadw" method="POST">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autocomplete="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>&copy; 2026 Meera. All rights reserved.</footer>
+
+</body>
+</html>
